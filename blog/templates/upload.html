@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Upload Page</title>
+    <link rel="stylesheet" href="{% static 'upload.css' %}" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://www.svgrepo.com/show/353657/django-icon.svg"
+    />
+  </head>
+  <body>
+    <form class="form" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <label for="title">Photo title</label>
+      <input
+        class="title_input input"
+        type="text"
+        name="title"
+        required
+        id="title"
+      />
+      <label for="photo">Photo dropzone</label>
+      <input
+        type="file"
+        id="photo"
+        class="photo_file input"
+        name="photo"
+        required
+      />
+      <button type="submit" class="submit_btn">Ready 😁</button>
+    </form>
+  </body>
+</html>

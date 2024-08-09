@@ -1,0 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arvo", sans-serif;
+  line-height: 1.6;
+}
+
+.header {
+  background-image: url("https://consonni.dev/images/features/world-000.png");
+  filter: brightness(0.6);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 250px;
+}
+
+.main-wrap {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 2.5rem;
+  padding: 20px;
+  position: absolute;
+  z-index: 999;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.photo-wrapper {
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+}
+
+.upload-btn {
+  width: 100%;
+  display: block;
+  padding: 13px;
+  text-align: center;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  border: 2px solid black;
+  transition: 0.3s;
+}
+
+.upload-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.photo-wrapper h2 {
+  margin: 15px 0;
+}
+
+.photos-grid {
+  column-count: 3;
+  column-gap: 15px;
+}
+
+.photo-item {
+  break-inside: avoid;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.photo-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+  transform: scale(1.05);
+  filter: brightness(0.6);
+}
+
+.photo-title {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 0;
+  display: none;
+  transition: opacity 0.3s ease;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 100%;
+}
+
+.photo-item:hover .photo-title {
+  display: block;
+}

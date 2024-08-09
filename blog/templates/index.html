@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home Page</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+    <link rel="icon" type="image/x-icon" href="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" />
+  </head>
+  <body>
+    <div class="main-wrap">
+      <h1 class="main-title">Python, Django :)</h1>
+    </div>
+    <div class="header"></div>
+    <div class="container">
+      <div class="photo-wrapper">
+        <a class="upload-btn" href="{% url 'upload' %}">Upload a New Photo</a>
+        <h2>Uploaded Photos</h2>
+        <div class="photos-grid">
+          {% for photo in photos %}
+          <div class="photo-item">
+            <img src="{{ photo.photo.url }}" alt="{{ photo.title }}" />
+            <h3 class="photo-title">{{ photo.title }}</h3>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
