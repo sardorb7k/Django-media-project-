@@ -46,21 +46,11 @@ body {
 }
 
 .photo-details {
-  width: 100%;
   display: flex;
   gap: 20px;
 }
 
-.search-input {
-  width: 100%;
-  border-radius: 5px;
-  padding: 13px;
-  border: 2px solid black;
-}
-
 .upload-btn {
-  width: 100%;
-  display: block;
   padding: 13px;
   text-align: center;
   text-decoration: none;

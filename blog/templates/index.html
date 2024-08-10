@@ -44,6 +44,17 @@
       document.addEventListener("DOMContentLoaded", function () {
         const searchInput = document.querySelector(".search-input");
         const photoItems = document.querySelectorAll(".photo-item");
+        const photoDetails = document.querySelector(".photo-details");
+
+        searchInput.style.width = "100%";
+        searchInput.style.borderRadius = "5px";
+        searchInput.style.padding = "13px";
+        searchInput.style.border = "2px solid black";
+        searchInput.style.fontSize = '18px'
+        searchInput.style.fontFamily = 'Arvo'
+
+        photoDetails.style.display = 'flex'
+        photoDetails.style.gap = '20px'
 
         searchInput.addEventListener("input", function () {
           const query = searchInput.value.toLowerCase();
