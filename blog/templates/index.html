@@ -7,7 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home Page</title>
     <link rel="stylesheet" href="{% static 'style.css' %}" />
-    <link rel="icon" type="image/x-icon" href="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png" />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png"
+    />
   </head>
   <body>
     <div class="main-wrap">
@@ -16,7 +20,14 @@
     <div class="header"></div>
     <div class="container">
       <div class="photo-wrapper">
-        <a class="upload-btn" href="{% url 'upload' %}">Upload a New Photo</a>
+        <div class="photo-details">
+          <input
+            type="text"
+            class="search-input"
+            placeholder="Search photos..."
+          />
+          <a class="upload-btn" href="{% url 'upload' %}">Upload a New Photo</a>
+        </div>
         <h2>Uploaded Photos</h2>
         <div class="photos-grid">
           {% for photo in photos %}
@@ -28,5 +39,26 @@
         </div>
       </div>
     </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const searchInput = document.querySelector(".search-input");
+        const photoItems = document.querySelectorAll(".photo-item");
+
+        searchInput.addEventListener("input", function () {
+          const query = searchInput.value.toLowerCase();
+          photoItems.forEach(function (item) {
+            const title = item
+              .querySelector(".photo-title")
+              .textContent.toLowerCase();
+            if (title.includes(query)) {
+              item.style.display = "block";
+            } else {
+              item.style.display = "none";
+            }
+          });
+        });
+      });
+    </script>
   </body>
 </html>
